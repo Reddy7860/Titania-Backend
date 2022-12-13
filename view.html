@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{ background:#ADD8E6
+}
+
+        
+        .tab2{
+     position: absolute;
+     left: 500px;
+     top: 20px;
+     color:red;
+   }
+
+        h2 {
+            background-image: url('./static/image2.png');
+            background-repeat: no-repeat;
+            background-size: 15%;
+            background-position-x: left;
+            text-align: left;
+	    color:red;
+            padding: 8%;
+
+        }
+
+        .r {
+            max-width: 400px;
+            background: blanchedalmond;
+            margin: auto;
+        }
+
+        button[type=submit] {
+            background: black;
+            color:white;
+
+            padding: 8px;
+        }
+
+        button[type=button] {
+            background: red;
+            padding: 8px;
+        }
+        
+        
+        table {
+  border-collapse: collapse;
+  width: 80%;
+  align="left";
+}
+.tabcontent{
+     width: 60%;
+     tabcontentbackground-color: #f1f1f1;
+     position: absolute;
+     left: 200px;
+     top: 140px;
+}
+th, td {
+  text-align: center;
+  padding: 6px;
+  
+  
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+</style>
+</head>
+
+<body>
+    <h2></h2>
+    <div class="tab2">
+	<h1>Client Trading Data </h1>
+    </div>
+    <div id="Paris" class="tabcontent">
+    <form action="/" method="post">
+	<label for="cars">Select Client ID:</label>
+
+	<select id="cars" name="cid">
+		{% for x in name %}
+  		<option  value={{x}}>{{x}}</option>
+  		{% endfor %}	
+	</select>
+	<input type="date" placeholder="Enter date" name="date" >
+	<button type="submit" >Search</button>
+  	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+  	</tr>
+  	{% for x in data %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+
+ 	<br>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>netqty</th>
+	<th>lotsize</th>    
+	<th>netprice</th>
+	<th>pnl</th>
+	<th>ltp</th>
+	<th>close</th>
+    
+  	</tr>
+  	{% for x in data1 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+	
+	<br>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>netqty</th>
+	<th>lotsize</th>    
+	<th>netprice</th>
+	<th>pnl</th>
+	<th>ltp</th>
+	<th>close</th>
+  	</tr>
+  	{% for x in data2 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+	
+	<br>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+    
+  	</tr>
+  	{% for x in data3 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+
+
+	<br>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+    
+  	</tr>
+  	{% for x in data4 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+  
+    </form>
+</div> 
+</body>
+
+</html>
