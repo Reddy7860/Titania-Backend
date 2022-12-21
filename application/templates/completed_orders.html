@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Client_id</th>
+        <th>Strategy</th>
+        <th>Stock</th>
+        <th>Signal</th>
+        <th>Value</th>
+        <th>buy_probability</th>
+        <th>sell_probability</th>
+        <th>StopLoss</th>
+
+        <th>Target</th>
+        <th>Qty</th>
+        <th>Strike_Buy_Price</th>
+        <th>premium_StopLoss</th>
+
+        <td>premium_Target</td>
+        <td>lotsize_x</td>
+        <td>historic_profit</td>
+        <td>current_script</td>
+        <td>token</td>
+        <td>execution_date</td>
+        <td>order_id</td>
+        <td>averageprice</td>
+        <td>updatetime</td>
+        <td>exchorderupdatetime</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ind in value.index: %}
+        <tr>
+          <td>{{value['Client_id'][ind]}}</td>
+          <td>{{value['Strategy'][ind]}}</td>
+          <td>{{value['Stock'][ind]}}</td>
+          <td>{{value['Signal'][ind]}}</td>
+          <td>{{value['Value'][ind]}}</td>
+          <td>{{value['buy_probability'][ind]}}</td>
+          <td>{{value['sell_probability'][ind]}}</td>
+          <td>{{value['StopLoss'][ind]}}</td>
+          <td>{{value['Target'][ind]}}</td>
+          <td>{{value['Qty'][ind]}}</td>
+          <td>{{value['Strike_Buy_Price'][ind]}}</td>
+          <td>{{value['premium_StopLoss'][ind]}}</td>
+          <td>{{value['premium_Target'][ind]}}</td>
+          <td>{{value['lotsize_x'][ind]}}</td>
+          <td>{{value['historic_profit'][ind]}}</td>
+          <td>{{value['current_script'][ind]}}</td>
+          <td>{{value['token'][ind]}}</td>
+          <td>{{value['execution_date'][ind]}}</td>
+          <td>{{value['order_id'][ind]}}</td>
+          <td>{{value['averageprice'][ind]}}</td>
+          <td>{{value['updatetime'][ind]}}</td>
+          <td>{{value['exchorderupdatetime'][ind]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          {searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          null,
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false}],
+      });
+    });
+  </script>
+{% endblock %}

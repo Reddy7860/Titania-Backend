@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table class="styled-table">
+    <thead>
+        <tr>
+             <th>Strategy</th>
+          <th>Stock</th>
+          <th>Signal</th>
+          <th>Datetime</th>
+          <th>Buy Probability</th>
+          <th>Sell Probability</th>
+        </tr>
+    </thead>
+      <tbody>
+        {% for row in value %} 
+          <tr>
+            <td>{{row.Strategy}}</td>
+            <td>{{row.Stock}}</td>
+            <td>{{row.Signal}}</td>
+            <td>{{row.Datetime}}</td>
+            <td>{{row.buy_probability}}</td>
+            <td>{{row.sell_probability}}</td>
+            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

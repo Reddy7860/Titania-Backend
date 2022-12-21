@@ -1,0 +1,59 @@
+{% for row in daily_orders %}  
+<tr>
+    <td>{{row.Strategy}}</td>
+    <td>{{row.Stock}}</td>
+    <td>{{row.Signal}}</td>
+    <td>{{row.Datetime}}</td>
+    <td>{{row.buy_probability}}</td>
+    <td>{{row.sell_probability}}</td>
+    <td>{{row.current_script}}</td>
+    <td>{{row.order_id}}</td>
+</tr>
+{% endfor %} 
+ <!--  <table id="final_open_data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Client_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ind in final_open_data.index: %}
+        <tr>
+          <td>{{final_open_data['Client_id'][ind]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+
+<!-- {% extends "layout.html" %}
+{% block content %}
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Stock</th>
+          <th>Signal</th>
+          <th>Datetime</th>
+          <th>buy_probability</th>
+          <th>sell_probability</th>
+          <th>current_script</th>
+          <th>order_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in value %} 
+          <tr>
+            <td>{{row.Strategy}}</td>
+            <td>{{row.Stock}}</td>
+            <td>{{row.Signal}}</td>
+            <td>{{row.Datetime}}</td>
+            <td>{{row.buy_probability}}</td>
+            <td>{{row.sell_probability}}</td>
+            <td>{{row.current_script}}</td>
+            <td>{{row.order_id}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %} -->

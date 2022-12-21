@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<script>
+    function apicall(url) {
+        $.ajax({
+            type:"GET", url:url, 
+            success: (data) => { 
+                console.log(data, $("#graph"));
+                Plotly.newPlot( $("#graph")[0], data );
+             }
+        });
+    }
+    window.onload = function () {
+        apicall("/supp_res");
+    }
+
+    setInterval(function() {apicall("/supp_res");},1000);
+
+</script>
+
+{% endblock %}
