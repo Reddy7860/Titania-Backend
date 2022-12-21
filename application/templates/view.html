@@ -1,0 +1,316 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{ background:#ADD8E6
+}
+
+        
+        .tab2{
+     position: absolute;
+     left: 500px;
+     top: 20px;
+     color:red;
+   }
+
+        h2 {
+            background-image: url('./static/image2.png');
+            background-repeat: no-repeat;
+            background-size: 15%;
+            background-position-x: left;
+            text-align: left;
+	    color:red;
+            padding: 8%;
+
+        }
+
+        .r {
+            max-width: 400px;
+            background: blanchedalmond;
+            margin: auto;
+        }
+
+        button[type=submit] {
+            background: black;
+            color:white;
+
+            padding: 8px;
+        }
+
+        button[type=button] {
+            background: red;
+            padding: 8px;
+        }
+        
+        
+        table {
+  border-collapse: collapse;
+  width: 80%;
+  align="left";
+}
+.tabcontent{
+     width: 60%;
+     tabcontentbackground-color: #f1f1f1;
+     position: absolute;
+     left: 200px;
+     top: 140px;
+}
+th, td {
+  text-align: center;
+  padding: 6px;
+  
+  
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+</style>
+<!-- </head> -->
+
+<body>
+
+<div class="container">
+            <br /><br />
+            <!-- <select name="search_filter" id="search_filter" class="form-control">
+            <option value="">Select Client</option>';
+            {% for client in clients %}
+        <option value="{{client}}">{{client}}</option>';    
+      {% endfor %}
+            </select>
+            <input type="hidden" name="hidden_value" id="hidden_value" />
+            <div style="clear:both"></div>
+            <br />
+            <div class="table-responsive">
+                <table id="data" class="table table-striped">
+                    <thead>
+                        <tr>
+                  <th>Strategy</th>
+              <th>Stock</th>
+              <th>Signal</th>
+              <th>Datetime</th>
+              <th>buy_probability</th>
+              <th>sell_probability</th>
+              <th>current_script</th>
+              <th>order_id</th>
+                </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            
+            <br />
+            <br />
+            <br />
+        </div> -->
+
+
+    <div id="Paris" class="tabcontent">
+    <form action="/" method="post">
+	<label for="cars">Select Client ID:</label>
+
+	<select id="cars" name="cid">
+		{% for x in name %}
+  		<option  value={{x}}>{{x}}</option>
+  		{% endfor %}	
+	</select>
+	<input type="date" placeholder="Enter date" name="date" >
+	<button type="submit" >Search</button>
+  <!-- <br /><br /> -->
+  <h2>Completed Data</h2>
+  	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+  	</tr>
+  	{% for x in data %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+
+ 	<!-- <br /><br /> -->
+  <h2>Position Data</h2>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>netqty</th>
+	<th>lotsize</th>    
+	<th>netprice</th>
+	<th>pnl</th>
+	<th>ltp</th>
+	<th>close</th>
+    
+  	</tr>
+  	{% for x in data1 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+	<!-- <br /><br /> -->
+	<h2>Completed Positions</h2>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>netqty</th>
+	<th>lotsize</th>    
+	<th>netprice</th>
+	<th>pnl</th>
+	<th>ltp</th>
+	<th>close</th>
+  	</tr>
+  	{% for x in data2 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+	
+	<!-- <br /><br /> -->
+  <h2>Stoploss Positions</h2>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+    
+  	</tr>
+  	{% for x in data3 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+
+
+	<!-- <br /><br /> -->
+  <h2>Open Positions</h2>
+	<table>
+  	<tr>
+     	<th>Client_id</th>
+     	<th>tradingsymbol</th>
+     	<th>producttype</th>
+	<th>price</th>
+	<th>transactiontype</th>
+	<th>quantity</th>
+	<th>lotsize</th>
+	<th>symboltoken</th>
+	<th>instrumenttype</th>
+	<th>order Id</th>
+    
+  	</tr>
+  	{% for x in data4 %}
+  	<tr>
+   	 <td>{{x[0]}}</td>  
+    	<td>{{x[1]}}</td>  
+    	<td>{{x[2]}}</td>  
+        <td>{{x[3]}}</td>  
+	<td>{{x[4]}}</td>  
+	<td>{{x[5]}}</td>  
+	<td>{{x[6]}}</td>  
+	<td>{{x[7]}}</td>  
+	<td>{{x[8]}}</td>  
+	<td>{{x[9]}}</td>  
+  	</tr>
+  	{% endfor %}
+	</table>
+  
+    </form>
+</div> 
+</body>
+
+<!-- <script>
+$(document).ready(function(){
+    load_data();
+    function load_data(query='')
+    {
+        $.ajax({
+            url:"/fetch_orders",
+            method:"POST",
+            data:{query:query},
+            success:function(data)
+            { 
+                $('tbody').html(data);
+                $('tbody').append(data.htmlresponse);
+            }
+        })
+    }
+ 
+    $('#search_filter').change(function(){
+        $('#hidden_value').val($('#search_filter').val());
+        var query = $('#hidden_value').val(); 
+        load_data(query);
+    });
+     
+});
+</script> -->
+
+</html>
+
+ {% endblock %}

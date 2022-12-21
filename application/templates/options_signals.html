@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}  
+<table class="styled-table">
+      <thead>
+        <tr>
+          <th>Datetime</th>
+          <th>Stock</th>
+          <th>signal</th>
+          <th>Call_Interpretation</th>
+          <th>Put_Interpretation</th>
+          <th>pcr_ratio</th>
+          <th>current_call_volume</th>
+          <th>current_put_volume</th>
+
+          <th>Call_majority</th>
+          <th>Put_majority</th>
+          <th>call_volume_rank</th>
+          <th>put_volume_rank</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in value %} 
+          <tr>
+            <td>{{row.Datetime}}</td>
+            <td>{{row.Stock}}</td>
+            <td>{{row.signal}}</td>
+            <td>{{row.Call_Interpretation}}</td>
+            <td>{{row.Put_Interpretation}}</td>
+            <td>{{row.pcr_ratio}}</td>
+            <td>{{row.current_call_volume}}</td>
+            <td>{{row.current_put_volume}}</td>
+            <td>{{row.Call_Majority}}</td>
+            <td>{{row.Put_Majority}}</td>
+            <td>{{row.call_volume_rank}}</td>
+            <td>{{row.call_volume_rank}}</td>
+            <td>{{row.put_volume_rank}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Stock</th>
+          <th>Signal</th>
+          <th>Datetime</th>
+          <th>buy_probability</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in value %} 
+          <tr>
+            <td>{{row.Strategy}}</td>
+            <td>{{row.Stock}}</td>
+            <td>{{row.Signal}}</td>
+            <td>{{row.Datetime}}</td>
+            <td>{{row.buy_probability}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
